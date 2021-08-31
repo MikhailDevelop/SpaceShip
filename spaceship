@@ -1,0 +1,95 @@
+    const spaceship = {
+             crewCount: 10, // passagers
+             fuel: 300, //petrol
+             travel: 0, //travel
+             spacestop:0,
+           }
+
+         function start() {
+           var fuel = spaceship.fuel;
+           console.warn('fuel: ' + spaceship.fuel);
+
+           var travel = spaceship.travel;
+           console.error('travel: ' + spaceship.travel);
+
+           var spacestop = spaceship.spacestop;
+           console.error('spacestop: ' + spaceship.spacestop);
+
+           if(spaceship.fuel === 300) {
+             for(spaceship.fuel = 300; spaceship.fuel > 0; spaceship.fuel--) {
+                      spaceship.travel++;
+                    //travel - если просто написать travel то нечего не сработает
+                    // не смотря на то что вверху написано var travel = spaceship.travel;
+                    // но когда пишишь spaceship.travel++ тогда все срабатывает корректно
+                    // видимо переменная не принимает значение spaceship.travel
+                      console.error('travel: ' + spaceship.travel);
+                      console.warn('fuel: ' + spaceship.fuel);
+                      console.log(spaceship);
+                  }
+              if(spaceship.fuel === 0) {
+                stop();
+              }
+         }
+
+         function stop() {
+           if(spaceship.fuel === 0) {
+             console.error('default');
+             spaceship.spacestop++;
+             console.error('spacestop ' + spaceship.spacestop);
+           }
+         }
+          }
+
+         function fuel() {
+          if(spaceship.spacestop === 1) {
+              spaceship.fuel += 300;
+              console.warn('fuel: ' + spaceship.fuel);
+              console.error(spaceship);
+          }
+          else if(spaceship.spacestop === 2) {
+            spaceship.fuel += 300;
+            console.warn('fuel: ' + spaceship.fuel);
+            console.error(spaceship);
+          }
+
+          else if(spaceship.spacestop === 3) {
+            spaceship.fuel += 300;
+            console.warn('fuel: ' + spaceship.fuel);
+            console.error(spaceship);
+          }
+
+          else if(spaceship.spacestop === 4) {
+            spaceship.fuel += 300;
+            console.warn('fuel: ' + spaceship.fuel);
+            console.error(spaceship);
+          }
+
+          else {
+            console.error('fuel full');
+          }
+         }
+
+         //passagers
+         function SpaceStopPlus() {
+           if(spaceship.crewCount === 10) {
+              spaceship.crewCount += 10;
+              console.warn('crewCount ' + spaceship.crewCount);
+           }
+         }
+
+         //passagers
+         function SpaceStopMinus() {
+           if(spaceship.crewCount === 10) {
+              spaceship.crewCount -= 10;
+              console.warn('crewCount ' + spaceship.crewCount);
+           } else {
+             console.warn('dont changes' + spaceship.crewCount)
+           }
+         }
+
+        function stop() {
+          if(spaceship.travel++) {
+            spaceship.travel;
+            console.warn('stop');
+          }
+        }
